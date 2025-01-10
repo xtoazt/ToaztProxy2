@@ -5,77 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToaztProxy</title>
     <style>
-        html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video,details,summary{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:transparent;}html,body,.wrapper{height:100%;width:100%;background-image:linear-gradient(to top,#c1dfc4 0%,#deecdd 100%);}input{font-family:inherit;}*,html,body{font-family:"Lato",serif;font-size:15px;font-weight:300;line-height:22px;}*:focus{outline:none;}*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}.UrlCheck{opacity:1;height:auto;}.UrlCheck{margin-top:0px !important;}.row{position:relative;width:100%;}.row:before,.row:after{content:"";display:table;line-height:0;}.row [class*="span"].noFloat{float:none;margin:2% auto;overflow:hidden;}.UrlCheck .span10{margin-top:70px !important;}h1.splash{font-size:48px;margin:0;margin-top:130px;margin-bottom:0px;line-height:52px;color:#FFF;text-shadow:0px 2px 4px rgba(0,0,0,0.5);}strong{font-weight:bold;}.UrlCheck .span10{background:rgba(255,255,255,0.5);padding:7px;overflow:hidden;margin-top:0px !important;max-width:800px;}.margin .span10{width:81.33333%;}.row [class*="span"]{float:left;position:relative;}textarea,input[type="text"],input[type="password"]{width:100%;background:#FFF;border:0px solid #CCC;padding:8px 5px;color:#333;}textarea,input[type="text"],input[type="password"]{width:75%;background:#EFEFEF;border:0px solid #CCC;padding:8px 5px;color:#22225d;float:left;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}.row .textCenter{text-align:center;background:none;}.UrlCheck input[type="text"]{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;font-size:20px;height:58px;line-height:58px;width:100%;float:left;padding-left:10px;}.UrlCheck input[type="text"]{-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;-webkit-border-top-left-radius:4px;-moz-border-top-left-radius:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-moz-border-bottom-left-radius:4px;border-bottom-left-radius:4px;font-size:20px;height:58px;line-height:58px;width:70%;float:left;padding-left:10px;background:#FFF;}.UrlCheck #submitBtn{position:absolute;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;-webkit-border-top-right-radius:4px;-moz-border-top-right-radius:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-bottom-right-radius:4px;border-bottom-right-radius:4px;background:#9dca68;font-size:18px;height:58px;line-height:58px;border:0;font-weight:400;width:30%;text-align:center;margin-top:0px;color:#FFF;cursor:pointer;right:7px;top:7px;}a,a:visited{color:#22225e;text-decoration:none;}.footer{text-align:center;margin-top:-70px;padding:25px 0 0 0;z-index:1000;background:rgba(0,0,0,0.5);height:70px;}.footer a{margin-right:20px;}
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(to top right, #74b9ff, #a29bfe, #6c5ce7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .wrapper {
+            text-align: center;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1.splash {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .searchform {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .searchform input {
+            font-size: 18px;
+            padding: 15px;
+            width: 70%;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .searchform input::placeholder {
+            color: #999;
+        }
+
+        .searchform input:focus {
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #submitBtn {
+            font-size: 18px;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #00cec9, #00b894);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #submitBtn:hover {
+            background: linear-gradient(to right, #00b894, #00cec9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
-
 <body>
     <div class="wrapper">
-        <div class="UrlCheck">
-            <div class="row margin">
-                <div class="span10 noFloat textCenter">
-                    <h1 class="splash"><strong>Toazt Proxy</strong></h1>
-                </div>
-                <div class="span10 noFloat">
-                    <div class="searchform">
-                        <input type="text" id="input" placeholder=" Enter URL Here" name="domainname">
-                        <a id="submitBtn" title="反向代理">Go</a>
-                    </div>
-                </div>
-            </div>
+        <h1 class="splash">Toazt Proxy</h1>
+        <div class="searchform">
+            <input type="text" id="input" placeholder="Enter URL Here" name="domainname">
+            <button id="submitBtn">Go</button>
         </div>
     </div>
+    <script>
+        const urlPattern = /^(http|https):\/\/[^ "]+$/;
+        const input = document.getElementById('input');
+        const submit = document.getElementById('submitBtn');
 
+        input.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                jumpFn(event);
+            }
+        });
 
-    
-    </div>
+        submit.addEventListener('click', jumpFn);
+
+        function jumpFn(event) {
+            const inputVal = input.value;
+            if (!inputVal) {
+                alert("Please enter a URL!");
+            } else if (!urlPattern.test(inputVal)) {
+                alert("Invalid URL. Please enter a valid one!");
+            } else {
+                const BaseUrl = location.origin;
+                const jumpUrl = `${BaseUrl}/${inputVal.replace(/https?:\/\//, '')}`;
+                window.open(jumpUrl, "_blank");
+            }
+        }
+    </script>
 </body>
-<script>
-    // 这个是正则的啊喂
-    const urlPattern = /^(http|https):\/\/[^ "]+$/;
-
-    // 提前把变量定义出来
-    const input = document.getElementById('input');
-    const submit = document.getElementById('submitBtn');
-
-    // 监听一个键盘的Enter事件
-    input.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-            console.log("Enter键被按下了");
-            // 执行你的操作
-            jumpFn(event)
-        }
-    });
-
-    // 箭筒一个 按钮被点击的事件
-    submit.addEventListener('click', jumpFn)
-
-    // 这个是 主函数
-    function jumpFn(event) {
-        const inputVal = input.value;
-        // 执行你的操作
-        if (!inputVal) {
-            console.log("这也妹有输入内容鸭！");
-        } else if (!urlPattern.test(inputVal)) {
-            // 输入的内容不是 URL，给出提示信息
-            alert("你得输入有效的 URL鸭！");
-        } else {
-            // 业务逻辑
-            console.log('开始处理业务逻辑')
-            // 获取当前的url
-            // const BaseUrl = 'https://fy-proxy.vercel.app';
-            const BaseUrl = location.origin;
-            // 把输入的内容一截两段
-            const [protocol, hostname] = inputVal.split(':/');
-
-            // 拼接跳转链接
-            const jumpUrl = `${BaseUrl}/${protocol}${hostname}`;
-            // console.log(jumpUrl)
-            // 跳出去
-            window.open(jumpUrl, "_blank");
-            // 完成
-        }
-    }
-</script>
-
 </html>
